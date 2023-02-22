@@ -1,3 +1,4 @@
+# python train.py --workers 8 --device 0 --batch-size 32 --data data/custom_sv.yaml --img 640 640 --weights yolov7_training.pt --cfg cfg/training/yolov7-dota.yaml --name name_1 --hyp data/hyp.scratch.dota.yaml
 import argparse
 import logging
 import math
