@@ -1,6 +1,6 @@
 # Using Yinghui's version https://github.com/yhsmiley/fdet-api/. Please follow the set up guide.
 # results are printed onto console
-# eg. python evaluate_fbeta_indiv.py /home/wenyi/DATA/yolov7/runs/test/vedai_proxy_veh/yolov7_synthgtav_proxy_vehs_640_bs32_e200_predictions.json /home/wenyi/DATA/VEDAI/vedai-veh.json
+# eg. python evaluate_fbeta.py /home/wenyi/DATA/yolov7/runs/test/vedai_proxy_veh/yolov7_synthgtav_proxy_vehs_640_bs32_e200_predictions.json /home/wenyi/DATA/VEDAI/vedai-veh.json
 
 from pycocotools.coco import COCO
 from pycocotools.cocoeval import COCOeval
