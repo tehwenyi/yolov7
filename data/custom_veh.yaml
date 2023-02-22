@@ -1,0 +1,13 @@
+# just a test run
+# python test.py --data data/custom_dota.yaml --img 640 --batch 32 --conf 0.001 --iou 0.65 --device 0 --weights weights.pt --name your_name
+# python test.py --data data/custom_dota.yaml --img 640 --batch 32 --conf 0.001 --iou 0.65 --device 0 --weights /home/wenyi/DATA/synthetics/results/yolov7_dota2.0_baseline_640_bs32_e200/exp/weights/best.pt --name yolov7_dota2.0_baseline_640_bs32_e200
+# train and val data as 1) directory: path/images/, 2) file: path/images.txt, or 3) list: [path1/images/, path2/images/]
+# train: /home/wenyi/DATA/synthetics/yolo_DOTA_vehs_only_TILED/train
+# val: /home/wenyi/DATA/synthetics/yolo_dota_val_vehs_TILED # DOTA vehicles
+val: /home/wenyi/DATA/VEDAI/yolo-format/yolo_vedai_vehs_TILED # VEDAI vehicles
+
+# number of classes
+nc: 1
+
+# class names
+names: [ 'vehicle' ]
