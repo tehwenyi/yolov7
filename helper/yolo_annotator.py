@@ -6,16 +6,15 @@ from pathlib import Path
 import random
 
 # only need to edit here
-folder = Path("/home/wenyi/DATA/VEDAI/yolo-format/yolo_vedai_small-vehs_TILED")
-name = "00000022_co_0_0"
+folder = Path("/home/DATA/synthetics/")
+name = "test1"
+img_suffix = ".jpg"
 
 label_path = folder / "labels" / (name + ".txt")
-img_path = folder / "images" / (name + ".png")
+img_path = folder / "images" / (name + img_suffix)
 print(label_path)
 print(img_path)
 
-IMG_HEIGHT = 640.0
-IMG_WIDTH = 640.0
 
 colour = (255, 255, 255)
 
@@ -23,12 +22,13 @@ with open(label_path) as f:
   label_data = f.readlines()
 
 image = cv2.imread(str(img_path))
+img_height, img_width, _ = image.shape
 for label in label_data:
   category, xc, yc, w, h = label.split()
-  width = float(w) * IMG_WIDTH
-  height = float(h) * IMG_HEIGHT
-  x = float(xc) * IMG_WIDTH - width / 2.0
-  y = float(yc) * IMG_HEIGHT - height / 2.0
+  width = float(w) * img_width
+  height = float(h) * img_height
+  x = float(xc) * img_width - width / 2.0
+  y = float(yc) * img_height - height / 2.0
   cv2.rectangle(image, (int(x), int(y)), (int(x + width), int(y + height)), colour, 1)
   # cv2.putText(image, category, (x, y-10), cv2.FONT_HERSHEY_SIMPLEX, 0.4, colour, 1)
 # cv2.imwrite("/home/wenyi/DATA/synthetics/eg16.png", image)
